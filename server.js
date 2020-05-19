@@ -1,7 +1,6 @@
 require('dotenv').config();
 require('./lib/client').connect();
 
-const client = require('./lib/client');
 
 const app = require('./lib/app');
 
@@ -12,4 +11,8 @@ app.listen(PORT, () => {
   console.log(`Started on ${PORT}`);
 });
 
-app.get('/favorites', async(req, res) => { const data = await client.query('SELECT * from favorites'); res.json(data.rows);});
+
+
+
+
+
