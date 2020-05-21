@@ -16,12 +16,11 @@ async function run() {
                     id SERIAL PRIMARY KEY,
                     email VARCHAR(256) NOT NULL,
                     hash VARCHAR(512) NOT NULL
-                );           
-                CREATE TABLE animals (
-                    id SERIAL PRIMARY KEY NOT NULL,
-                    name VARCHAR(512) NOT NULL,
-                    cool_factor INTEGER NOT NULL,
-                    owner_id INTEGER NOT NULL REFERENCES users(id)
+                );
+                CREATE TABLE favorites (
+                    id SERIAL PRIMARY KEY,  
+                    image_id VARCHAR,
+                    user_id INTEGER NOT NULL REFERENCES users(id)
             );
         `);
 
